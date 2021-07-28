@@ -1,0 +1,29 @@
+server:
+  port: 8083
+    
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+      
+spring:
+  profiles:
+    active: native
+    
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:transaction-test
+    username: sa
+    password: 
+    initialization-mode: always
+    data: classpath:schema.sql,classpath:data.sql
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false

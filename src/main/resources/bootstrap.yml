@@ -1,0 +1,9 @@
+
+spring:
+  application:
+    name: 'transaction'
+  profiles:
+    active: test
+  cloud:
+    config:
+      uri: ${CLOUD_CONFIG_URI} 
